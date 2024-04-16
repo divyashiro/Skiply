@@ -16,5 +16,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 		return new ErrorResponse(HttpStatus.CONFLICT.value(),ex.getMessage());
 	}
 	
+	@ExceptionHandler(StudentNotFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public ErrorResponse handleNotFoundException(StudentNotFoundException ex) {
+		
+		return new ErrorResponse(HttpStatus.NOT_FOUND.value(),ex.getMessage());
+	}
+	
 
 }
