@@ -15,6 +15,7 @@ public class Student {
 	private String grade;
 	private Long mobileNumber;
 	private String schoolName;
+	private Boolean isFeePaid;
 	
 	public String getName() {
 		return name;
@@ -50,6 +51,12 @@ public class Student {
 	public String toString() {
 		return "Student [name=" + name + ", id=" + id + ", grade=" + grade + ", mobileNumber=" + mobileNumber
 				+ ", schoolName=" + schoolName + "]";
+	}
+	public Boolean getIsFeePaid() {
+		return isFeePaid;
+	}
+	public void setIsFeePaid(Boolean isFeePaid) {
+		this.isFeePaid = isFeePaid;
 	}
 	
 	

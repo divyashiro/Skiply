@@ -23,5 +23,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 		return new ErrorResponse(HttpStatus.NOT_FOUND.value(),ex.getMessage());
 	}
 	
+	@ExceptionHandler(FeeAlreadyPaidException.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	public ErrorResponse handleFeePaidException(FeeAlreadyPaidException ex) {
+		
+		return new ErrorResponse(HttpStatus.BAD_REQUEST.value(),ex.getMessage());
+	}
+	
 
 }

@@ -24,6 +24,7 @@ public class StudentServiceImpl implements StudentService{
 		if(isStudentPresent.isPresent()) {
 			throw new StudentAlreadyExistsExeption("Record with Name - " +student.getName() + " and Mobile number - " + student.getMobileNumber() + " already present");
 		} 
+		student.setIsFeePaid(false);
 		return studentRepository.save(student);
 	}
 	
