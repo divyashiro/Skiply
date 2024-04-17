@@ -22,17 +22,11 @@ public class ReceiptController {
 
 	@PostMapping
 	public Receipt saveReceipt(@RequestBody Receipt receipt) {
-		System.out.println("inside save receipt"  +receipt);
 		return receiptService.saveReceipt(receipt);
 	}
 	
 	@GetMapping("/{studentId}")
 	public ResponseEntity<?> viewReceipt(@PathVariable Long studentId) {
 		return new ResponseEntity<>(receiptService.viewReceiptByStudentId(studentId),HttpStatus.OK);
-	}
-	
-	@GetMapping
-	public ResponseEntity<?> getReceipt() {
-		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

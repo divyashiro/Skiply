@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.skiply.receipt.dao.ReceiptRepository;
 import com.skiply.receipt.entity.Receipt;
+import com.skiply.receipt.exception.ReceiptNotFoundException;
 import com.skiply.receipt.service.ReceiptService;
 
 @Service
@@ -22,7 +23,11 @@ public class ReceiptServiceImpl implements ReceiptService {
 
 	@Override
 	public Receipt viewReceiptByStudentId(Long studentId) {
-		return receiptRepository.findByStudentId(studentId);
+		Receipt receipt = receiptRepository.findByStudentId(studentId);
+		if(receipt != null) 
+				return receiptRepository.findByStudentId(studentId);
+		else
+				throw new ReceiptNotFoundException("No receipt found for student ID: " + studentId );
 		
 	}
 
