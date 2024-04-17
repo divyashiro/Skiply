@@ -30,5 +30,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 		return new ErrorResponse(HttpStatus.BAD_REQUEST.value(),ex.getMessage());
 	}
 	
+	@ExceptionHandler(CircuitBreakerException.class)
+	@ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+	public ErrorResponse handleFallbackException(CircuitBreakerException ex) {
+		
+		return new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE.value(),ex.getMessage());
+	}
+	
 
 }

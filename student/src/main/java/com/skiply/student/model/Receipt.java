@@ -12,6 +12,7 @@ public class Receipt {
 	private String cardType;
 	private Long fee;
 	private Long studentId;
+	private String message;
 	public Long getReferenceNumber() {
 		return referenceNumber;
 	}
@@ -47,6 +48,13 @@ public class Receipt {
 	}
 	public void setStudentId(Long studentId) {
 		this.studentId = studentId;
+	}
+	public Receipt(String message) {
+		super();
+		this.message = message;
+	}
+	public Receipt() {
+		super();
 	}
 	
 	

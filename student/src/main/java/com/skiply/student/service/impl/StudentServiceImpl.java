@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.skiply.student.dao.StudentRepository;
 import com.skiply.student.entity.Student;
 import com.skiply.student.exception.StudentAlreadyExistsExeption;
+import com.skiply.student.exception.StudentNotFoundException;
 import com.skiply.student.service.StudentService;
 
 @Service
@@ -36,6 +37,15 @@ public class StudentServiceImpl implements StudentService{
 	public List<Student> getStudents() {
 		
 		return studentRepository.findAll();
+	}
+
+	@Override
+	public Student getStudentById(Long studentId) {
+		Optional<Student> student = studentRepository.findById(studentId);
+		if(student.isPresent())
+			return student.get();
+		else
+			throw new StudentNotFoundException("Student not found");
 	}
 
 }

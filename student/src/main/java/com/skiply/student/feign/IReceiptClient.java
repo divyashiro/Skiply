@@ -11,7 +11,7 @@ import com.skiply.student.config.FeignConfig;
 import com.skiply.student.model.Receipt;
 
 
-@FeignClient(name = "RECEIPT-SERVICE", configuration=FeignConfig.class)
+@FeignClient(name = "RECEIPT-SERVICE", configuration=FeignConfig.class, fallback = HystrixClientFallback.class)
 public interface IReceiptClient {
 	
 	@PostMapping(value = "/receipt")
