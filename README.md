@@ -22,6 +22,16 @@ receipt - store and view receipt functionality implemented. Implemented using fe
 
 Requests: Sample requests for each service available in postman collection file
 
+Once all services are UP, eureka and swagger can accessed from below links, 
+
+Eureka -  http://localhost:8761
+
+Swagger : 
+
+STUDENT-SERVICE - http://localhost:9090/swagger-ui.html
+
+RECEIPT-SERVICE - http://localhost:9091/swagger-ui.html
+
 
 
 
