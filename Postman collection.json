@@ -1,0 +1,180 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "1c73ad48-8673-4979-93e9-83b011afed6c",
+      "name": "RAK",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-04-16T13:10:49.000Z",
+      "uid": "8959199-1c73ad48-8673-4979-93e9-83b011afed6c",
+      "createdAt": null,
+      "lastUpdatedBy": null
+    },
+    "item": [
+      {
+        "name": "Receipt-service",
+        "item": [
+          {
+            "name": "saveReceipt",
+            "id": "22211ed2-d36f-4d29-90fc-12a66f6c9665",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"studentId\": 1,\r\n    \"cardNumber\":\"4455-77-5\",\r\n    \"cardType\":\"mastercard\",\r\n    \"fee\": 2000\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:9091/receipt-service/receipt",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "9091",
+                "path": [
+                  "receipt-service",
+                  "receipt"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "8959199-22211ed2-d36f-4d29-90fc-12a66f6c9665"
+          },
+          {
+            "name": "viewReceiptByStudentId",
+            "id": "b5e5891d-413b-40d8-9e8f-8b2ad85b2033",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": []
+            },
+            "response": [],
+            "uid": "8959199-b5e5891d-413b-40d8-9e8f-8b2ad85b2033"
+          }
+        ],
+        "id": "f0e38963-4819-492f-a255-52071ae2a61b",
+        "uid": "8959199-f0e38963-4819-492f-a255-52071ae2a61b"
+      },
+      {
+        "name": "Student-service",
+        "item": [
+          {
+            "name": "createStudent",
+            "id": "d5f00888-93e1-42d1-ba6e-38b33eec5044",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\":\"Divya\",\r\n    \"grade\":\"5\",\r\n    \"mobileNumber\":\"505015384\",\r\n    \"schoolName\":\"Presidency\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:9090/student",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "9090",
+                "path": [
+                  "student"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "8959199-d5f00888-93e1-42d1-ba6e-38b33eec5044"
+          },
+          {
+            "name": "getAllStudents",
+            "id": "411bf83f-7d45-4eaa-9b0b-c15d0148ff0c",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:9090/student",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "9090",
+                "path": [
+                  "student"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "8959199-411bf83f-7d45-4eaa-9b0b-c15d0148ff0c"
+          },
+          {
+            "name": "collectFee",
+            "id": "01a94c16-3d7a-44e1-8566-b2e1c1a84b31",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": []
+            },
+            "response": [],
+            "uid": "8959199-01a94c16-3d7a-44e1-8566-b2e1c1a84b31"
+          },
+          {
+            "name": "getStudentbyId",
+            "id": "3b5ab11c-b6be-4bf3-b0bc-acec151b8b33",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:9090/student/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "9090",
+                "path": [
+                  "student",
+                  "1"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "8959199-3b5ab11c-b6be-4bf3-b0bc-acec151b8b33"
+          }
+        ],
+        "id": "ff4d779b-c244-4e82-a4f8-eda8ce217240",
+        "uid": "8959199-ff4d779b-c244-4e82-a4f8-eda8ce217240"
+      }
+    ]
+  }
+}
