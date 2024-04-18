@@ -31,14 +31,18 @@ public class ReceiptServiceImpl implements ReceiptService {
 
 	@Override
 	public ReceiptResponse viewReceiptByStudentId(Long studentId) {
-		Receipt receipt = receiptRepository.findByStudentId(studentId);
+		Receipt receipt = receiptRepository.findFirstByStudentId(studentId);
 		if(receipt != null) {
 			ReceiptResponse receiptResponse = new ReceiptResponse();
 			Student student = new Student();
 			ResponseEntity<Student> studentById = studentClient.getStudentById(studentId);
 			ModelMapper modelmapper = new ModelMapper();
 			modelmapper.map(studentById.getBody(),student);
-			receiptResponse.setReceipt(receipt);
+			receiptResponse.setCardNumber(receipt.getCardNumber());
+			receiptResponse.setReferenceNumber(receipt.getReferenceNumber());
+			receiptResponse.setCardType(receipt.getCardType());
+			receiptResponse.setDateTime(receipt.getDateTime());
+			receiptResponse.setFee(receipt.getFee());
 			receiptResponse.setStudent(student);
 			return receiptResponse;
 		}
