@@ -16,9 +16,9 @@ Service Description :
 
 EurekaServer - Implemented with Netflix eureka. 
 
-student - creates students, collects fees and stores the receipt. Added appropriate validation wherever needed. Implemented using feign client, circuit breaker, spring jpa and in memory H2 database
+student - creates students, collects fees and stores the receipt. Added appropriate validation wherever needed. Implemented using feign client, spring cloud load balancer,  circuit breaker, spring jpa and in memory H2 database
 
-receipt - store and view receipt functionality implemented. Implemented using feign client, circuit breaker, spring jpa and in memory H2 database
+receipt - store and view receipt functionality implemented. Implemented using feign client, spring cloud load balancer, circuit breaker, spring jpa and in memory H2 database
 
 Requests: Sample requests for each service available in postman collection file
 
