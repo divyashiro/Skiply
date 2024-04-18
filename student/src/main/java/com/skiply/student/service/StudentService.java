@@ -13,6 +13,7 @@ public interface StudentService {
 
 	List<Student> getStudents();
 	
+	Student getStudentById(Long studentId);
 	
 
 }
